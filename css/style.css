@@ -309,22 +309,28 @@ h1 {
 
 .score-circle {
     position: relative;
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 20px;
+    width: 260px;
+    height: 150px;
+    margin: 0 auto 18px;
 }
 
 .score-circle canvas {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gauge-center {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .score-value {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -340,6 +346,22 @@ h1 {
 .score-value small {
     display: block;
     font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.score-sub {
+    margin-top: 8px;
+}
+
+.score-sub span {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.score-sub small {
+    display: block;
+    font-size: 12px;
     color: var(--text-secondary);
 }
 
@@ -442,6 +464,90 @@ h1 {
     color: var(--text-secondary);
 }
 
+/* 题目索引 */
+.question-index {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.index-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.index-tip {
+    color: var(--text-light);
+}
+
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+}
+
+.index-item {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: white;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.index-item.answered {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: var(--text-primary);
+}
+
+.index-item.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-color: transparent;
+    color: white;
+}
+
+.index-item:hover {
+    transform: translateY(-1px);
+}
+
+/* 科学依据 */
+.evidence-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 20px 22px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.evidence-card h3 {
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.evidence-card ul {
+    padding-left: 18px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.evidence-card li {
+    margin-bottom: 8px;
+}
+
 /* 操作按钮 */
 .action-buttons {
     display: flex;
@@ -486,6 +592,15 @@ h1 {
 
     .option-text {
         font-size: 14px;
+    }
+
+    .score-circle {
+        width: 230px;
+        height: 140px;
+    }
+
+    .index-grid {
+        grid-template-columns: repeat(7, 1fr);
     }
 }
 

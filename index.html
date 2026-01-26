@@ -34,7 +34,7 @@
             <div class="intro-card">
                 <h2>测评须知</h2>
                 <p>欢迎参与能量频率测评，找到您的能量状态。</p>
-                <p>本次测评为<strong>单选题</strong>，共<strong>12道题</strong>，请在2分钟内完成。</p>
+                <p>本次测评为<strong>单选题</strong>，共<strong>50道题</strong>，请在约6-8分钟内完成。</p>
                 <div class="divider"></div>
                 <p>每个人的情感和行为都<strong>对应特定的能量频率</strong>，影响我们的<strong>幸福感、人际关系和成功的潜力</strong>。</p>
                 <p>请认真完成这个测评，您可以更好地了解自己，还能<strong>识别那些限制您发展的低频率行为模式</strong>，借此提高您的能量频率，<strong>释放您真正的潜力</strong>。</p>
@@ -62,6 +62,14 @@
             </div>
             <div class="progress-text">
                 <span id="current-num">1</span> / <span id="total-num">12</span>
+            </div>
+
+            <div class="question-index">
+                <div class="index-header">
+                    <span>题目索引</span>
+                    <span class="index-tip">已答题会标记</span>
+                </div>
+                <div class="index-grid" id="question-index"></div>
             </div>
 
             <div class="question-card" id="question-card">
@@ -98,10 +106,16 @@
 
             <div class="score-card">
                 <div class="score-circle">
-                    <canvas id="scoreChart" width="200" height="200"></canvas>
-                    <div class="score-value">
-                        <span id="total-score">0</span>
-                        <small>分</small>
+                    <canvas id="scoreChart" width="260" height="150"></canvas>
+                    <div class="gauge-center">
+                        <div class="score-value">
+                            <span id="total-score">0</span>
+                            <small>总分</small>
+                        </div>
+                        <div class="score-sub">
+                            <span id="avg-score">0</span>
+                            <small>能量指数（平均值）</small>
+                        </div>
                     </div>
                 </div>
                 <div class="level-badge" id="level-badge">
@@ -122,34 +136,17 @@
             </div>
 
             <div class="energy-scale">
-                <h3>霍金斯能量层级参考</h3>
-                <div class="scale-chart">
-                    <div class="scale-item" data-level="5">
-                        <span class="scale-range">> 3600</span>
-                        <span class="scale-name">高频能量</span>
-                        <span class="scale-emotion">喜悦·平和·开悟</span>
-                    </div>
-                    <div class="scale-item" data-level="4">
-                        <span class="scale-range">2400-3600</span>
-                        <span class="scale-name">中高频能量</span>
-                        <span class="scale-emotion">接纳·理性·爱</span>
-                    </div>
-                    <div class="scale-item" data-level="3">
-                        <span class="scale-range">1200-2400</span>
-                        <span class="scale-name">中频能量</span>
-                        <span class="scale-emotion">勇气·中立·主动</span>
-                    </div>
-                    <div class="scale-item" data-level="2">
-                        <span class="scale-range">600-1200</span>
-                        <span class="scale-name">中低频能量</span>
-                        <span class="scale-emotion">欲望·愤怒·骄傲</span>
-                    </div>
-                    <div class="scale-item" data-level="1">
-                        <span class="scale-range">< 600</span>
-                        <span class="scale-name">低频能量</span>
-                        <span class="scale-emotion">羞耻·内疚·恐惧</span>
-                    </div>
-                </div>
+                <h3>霍金斯能量层级参考（能量指数）</h3>
+                <div class="scale-chart" id="scale-chart"></div>
+            </div>
+
+            <div class="evidence-card">
+                <h3>科学依据与使用说明</h3>
+                <ul>
+                    <li>本测评参考霍金斯意识能量层级（Map of Consciousness）中常见的能量指数区间。</li>
+                    <li>题目从日常情境中的情绪、认知与行为反应切入，用于自我觉察与成长。</li>
+                    <li>结果仅作个人成长参考，不构成医学或心理诊断。</li>
+                </ul>
             </div>
 
             <div class="action-buttons">
@@ -173,7 +170,7 @@
             </div>
 
             <div class="footer">
-                <p>基于霍金斯能量层级理论</p>
+                <p>基于霍金斯意识能量层级理论</p>
                 <p>包丰源身心健康 · 生命智慧</p>
             </div>
         </div>
